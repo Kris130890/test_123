@@ -1,45 +1,24 @@
 import 'package:flutter/cupertino.dart';
 
-class Country {
-  final String? status;
-  final int? totalResults;
-  final List<CountryArticles>? articles;
+class Pokemon {
+  final int? count;
+  final String? next;
+  Null previous;
+  final List<PokemonResults>? results;
 
-  Country({
-    this.status,
-    this.totalResults,
-    @required this.articles,
+  Pokemon({
+    this.count,
+    this.next,
+    @required this.results,
   });
 }
 
-class CountryArticles {
-  final CountryArticlesSource? source;
-  final String? author;
-  final String? title;
-  final String? description;
-  final String? url;
-  final String? urlToImage;
-  final String? publishedAt;
-  final String? content;
-
-  CountryArticles({
-    this.source,
-    this.author,
-    this.title,
-    this.description,
-    this.url,
-    this.urlToImage,
-    this.publishedAt,
-    this.content,
-  });
-}
-
-class CountryArticlesSource {
-  final String? id;
+class PokemonResults {
   final String? name;
+  final String? url;
 
-  CountryArticlesSource({
-    this.id,
+  PokemonResults({
     this.name,
+    this.url,
   });
 }
