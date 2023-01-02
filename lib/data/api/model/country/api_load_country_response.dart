@@ -26,7 +26,7 @@ class PokemonsResultsList {
   final name;
   final url;
 
-  PokemonsResultsList({this.name, this.url});
+  PokemonsResultsList(this.name, this.url);
 
  static PokemonsResultsList fromJson(Map<String, dynamic> json) => PokemonsResultsList(
        json['name'],
