@@ -1,4 +1,4 @@
-import 'package:elinext_test_task/domain/model/country/country.dart';
+/*import 'package:elinext_test_task/domain/model/country/country.dart';
 import 'package:elinext_test_task/presentation/screen/country/tile/country_tile.dart';
 
 abstract class CountryFavoritesViewMapper {
@@ -32,4 +32,4 @@ class CountryFavoritesViewMapperImpl implements CountryFavoritesViewMapper {
 
     return list;
   }
-}
+}*/
