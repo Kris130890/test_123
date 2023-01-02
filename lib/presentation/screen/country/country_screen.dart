@@ -1,14 +1,14 @@
 import 'package:elinext_test_task/presentation/utils/const.dart';
 import 'package:elinext_test_task/presentation/utils/images.dart';
 import 'package:elinext_test_task/presentation/utils/text_style.dart';
-import 'package:flutter/cupertino.dart';
+///import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+///import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'country_bloc.dart';
-import 'country_event.dart';
+///import 'country_event.dart';
 import 'tile/country_tile.dart';
 
 class CountryScreen extends StatefulWidget {
@@ -21,7 +21,7 @@ class CountryScreen extends StatefulWidget {
 }
 
 class _CountryScreenState extends State<CountryScreen> {
-  final _bloc = GetIt.I.get<CountryBloc>();
+  //final _bloc = GetIt.I.get<CountryBloc>();
   final RefreshController _refreshController = RefreshController();
 
   @override
@@ -31,7 +31,7 @@ class _CountryScreenState extends State<CountryScreen> {
         title: Text(widget.title ?? ''),
       ),
       body: StreamBuilder(
-        stream: _bloc.country,
+     //   stream: _bloc.country,
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           final List<CountryTile>? list = snapshot.data;
 
@@ -51,14 +51,14 @@ class _CountryScreenState extends State<CountryScreen> {
                       return _listTile(tile);
                     },
                   ),
-                  onLoading: () async {
-                    _bloc.countryEventSink.add(OnCountryRefresh());
-                    _refreshController.loadComplete();
-                  },
-                  onRefresh: () async {
-                    _bloc.countryEventSink.add(OnCountryRefresh());
-                    _refreshController.refreshCompleted();
-                  },
+               //   onLoading: () async {
+                //    _bloc.countryEventSink.add(OnCountryRefresh());
+               //     _refreshController.loadComplete();
+                 // },
+                 // onRefresh: () async {
+                  //  _bloc.countryEventSink.add(OnCountryRefresh());
+                   // _refreshController.refreshCompleted();
+                 // },
                   controller: _refreshController,
                 );
         },
@@ -101,18 +101,18 @@ class _CountryScreenState extends State<CountryScreen> {
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: Text(
-                      tile.title ?? '',
+                      tile.name ?? '',
                       style: AppTextStyles.black14(
                         fontWeight: AppFonts.bold,
                       ),
                     ),
                   ),
-                  tile.urlToImage == null
+                  tile.url == null
                       ? Image.asset(
                           AppImages.no_image_available,
                         )
                       : Image.network(
-                          tile.urlToImage ?? '',
+                          tile.url ?? '',
                         ),
                 ],
               ),
@@ -126,7 +126,7 @@ class _CountryScreenState extends State<CountryScreen> {
   @override
   void dispose() {
     _refreshController.dispose();
-    _bloc.dispose();
+  //  _bloc.dispose();
     super.dispose();
   }
 }
