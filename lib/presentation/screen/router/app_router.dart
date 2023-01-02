@@ -21,12 +21,12 @@ class AppRouter {
             title: C.ROUTER_DETAILS,
           ),
         );
-      case C.NAVIGATOR_ROUTER_FAVORITES:
+     /* case C.NAVIGATOR_ROUTER_FAVORITES:
         return MaterialPageRoute(
           builder: (_) => CountryFavoritesScreen(
             title: C.ROUTER_FAVORITES,
           ),
-        );
+        );*/
       default:
         return MaterialPageRoute(
           builder: (_) => CountryScreen(
