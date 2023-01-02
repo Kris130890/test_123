@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:path/path.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:sqflite/sqflite.dart';
-import 'presentation/di/app_injector.dart';
+///import 'presentation/di/app_injector.dart';
 import 'presentation/screen/router/app_router.dart';
 
 Future<void> main() async {
@@ -12,7 +12,7 @@ Future<void> main() async {
 
   Database database = await _initDatabase();
 
-  await initInjector(database);
+ /// await initInjector(database);
 
   runApp(App(AppRouter()));
 }
