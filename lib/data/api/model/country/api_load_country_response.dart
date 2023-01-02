@@ -2,7 +2,7 @@ class PokemonListName {
   final count;
   final next;
   Null previous;
-  List<PokemonsResultsList>? results;
+  final results;
 
   PokemonListName(this.count, this.next, this.previous, this.results, Map<String, dynamic> json,);
 
@@ -28,8 +28,8 @@ class PokemonsResultsList {
 
   PokemonsResultsList({this.name, this.url});
 
-  PokemonsResultsList? fromJson(Map<String, dynamic> json) {
-    final name = json['name'];
-    final url = json['url'];
-  }
+ static PokemonsResultsList fromJson(Map<String, dynamic> json) => PokemonsResultsList(
+       json['name'],
+       json['url'],
+  );
 }
