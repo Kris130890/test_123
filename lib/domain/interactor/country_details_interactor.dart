@@ -1,10 +1,11 @@
-import 'package:elinext_test_task/domain/model/country/country.dart';
+///import 'package:elinext_test_task/domain/model/country/country.dart';
+/*import 'package:elinext_test_task/domain/model/country/country.dart';
 import 'package:elinext_test_task/domain/repository/CountryDetailsRepository.dart';
 
 abstract class CountryDetailsInteractor {
-  Future<CountryArticles> getNews(String title);
+  Future<PokemonResults> getNews(String title);
 
-  Future<int> insertNews(Country tile);
+  Future<int> insertNews(Pokemon tile);
 
   Future<int> deleteNews(String title);
 }
@@ -17,7 +18,7 @@ class CountryDetailsInteractorImpl implements CountryDetailsInteractor {
   );
 
   @override
-  Future<int> insertNews(Country tile) async {
+  Future<int> insertNews(Pokemon tile) async {
     return await _dbRepository.insertNews(tile);
   }
 
@@ -27,7 +28,7 @@ class CountryDetailsInteractorImpl implements CountryDetailsInteractor {
   }
 
   @override
-  Future<CountryArticles> getNews(String title) async {
+  Future<PokemonResults> getNews(String title) async {
     return await _dbRepository.getNews(title);
   }
-}
+}*/
