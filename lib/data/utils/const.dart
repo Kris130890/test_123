@@ -11,7 +11,7 @@ class C {
   static String getCountry(int page) =>
       WEB_URL +
       _V2 +
-      'pokemon' +
+      'pokemon';
     ///  _API_KEY;
 
   ///region database

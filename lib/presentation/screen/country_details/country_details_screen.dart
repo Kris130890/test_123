@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import 'country_details_bloc.dart';
-import 'country_details_event.dart';
+///import 'country_details_event.dart';
 import 'tile/country_details_tile.dart';
 
 class CountryDetailsScreen extends StatefulWidget {
@@ -28,13 +28,13 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
 
   _CountryDetailsScreenState(this.tile);
 
-  final _bloc = GetIt.I.get<CountryDetailsBloc>();
+ // final _bloc = GetIt.I.get<CountryDetailsBloc>();
 
-  @override
+ /* @override
   void initState() {
     _bloc.countryDescriptionEventSink.add(Init(tile));
     super.initState();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
         title: Text(widget.title ?? ''),
       ),
       body: StreamBuilder(
-        stream: _bloc.countryDetails,
+      //  stream: _bloc.countryDetails,
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           final CountryDetailsTile tile = snapshot.data;
 
@@ -87,7 +87,7 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
                       children: [
                         _header(tile),
                         _mainContent(tile),
-                        _footer(tile),
+                      //  _footer(tile),
                       ],
                     ),
                   ),
@@ -103,7 +103,7 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
+     /*   Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             tile.source == null || tile.source?.name == null
@@ -138,8 +138,8 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
               ),
             ),
           ],
-        ),
-        tile.title == null
+        ),*/
+        tile.name == null
             ? Container(
                 width: 0.0,
                 height: 0.0,
@@ -147,7 +147,7 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
             : Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: Text(
-                  tile.title ?? '',
+                  tile.name ?? '',
                   style: AppTextStyles.black14(
                     fontWeight: AppFonts.bold,
                   ),
@@ -163,7 +163,7 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        tile.urlToImage == null
+        tile.url == null
             ? Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: Image.asset(
@@ -173,35 +173,7 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
             : Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: Image.network(
-                  tile.urlToImage ?? '',
-                ),
-              ),
-        tile.description == null
-            ? Container(
-                width: 0.0,
-                height: 0.0,
-              )
-            : Padding(
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                child: Text(
-                  tile.description ?? '',
-                  style: AppTextStyles.black14(
-                    fontWeight: AppFonts.regular,
-                  ),
-                ),
-              ),
-        tile.content == null
-            ? Container(
-                width: 0.0,
-                height: 0.0,
-              )
-            : Padding(
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                child: Text(
-                  tile.content ?? '',
-                  style: AppTextStyles.black14(
-                    fontWeight: AppFonts.regular,
-                  ),
+                  tile.url ?? '',
                 ),
               ),
         tile.url == null
@@ -212,8 +184,8 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
             : Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: GestureDetector(
-                  onTap: () => _bloc.countryDescriptionEventSink
-                      .add(OpenCountryDetailsNews(tile.url)),
+                 // onTap: () => _bloc.countryDescriptionEventSink
+                   //   .add(OpenCountryDetailsNews(tile.url)),
                   child: Text(
                     tile.url ?? '',
                     style: AppTextStyles.blue14(
@@ -227,7 +199,7 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
     );
   }
 
-  Widget _footer(CountryDetailsTile tile) {
+ /* Widget _footer(CountryDetailsTile tile) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -271,11 +243,11 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
               ),
       ],
     );
-  }
+  }*/
 
   @override
   void dispose() {
-    _bloc.dispose();
+  //  _bloc.dispose();
     super.dispose();
   }
 }

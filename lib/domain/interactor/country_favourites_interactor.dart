@@ -1,8 +1,8 @@
-///import 'package:elinext_test_task/domain/model/country/country.dart';
-///import 'package:elinext_test_task/domain/repository/CountryFavoritesRepository.dart';
-/*
+import 'package:elinext_test_task/domain/model/country/country.dart';
+import 'package:elinext_test_task/domain/repository/CountryFavoritesRepository.dart';
+
 abstract class CountryFavoritesInteractor {
-  Future<Country> getNews(int countNews);
+  Future<Pokemon> getNews(int countNews);
 }
 
 class CountryFavoritesInteractorImpl implements CountryFavoritesInteractor {
@@ -13,8 +13,7 @@ class CountryFavoritesInteractorImpl implements CountryFavoritesInteractor {
   );
 
   @override
-  Future<Country> getNews(int countNews) async {
+  Future<Pokemon> getNews(int countNews) async {
     return await _dbRepository.getNews(countNews);
   }
 }
-*/

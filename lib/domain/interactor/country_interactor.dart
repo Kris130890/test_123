@@ -1,8 +1,8 @@
-///import 'package:elinext_test_task/domain/model/country/country.dart';
-/*import 'package:elinext_test_task/domain/repository/CountryRepository.dart';
+import 'package:elinext_test_task/domain/model/country/country.dart';
+import 'package:elinext_test_task/domain/repository/CountryRepository.dart';
 
 abstract class CountryInteractor {
-  Future<Country> loadCountryNews(int countNews);
+  Future<Pokemon> loadCountryNews(int countNews);
 }
 
 class CountryInteractorImpl implements CountryInteractor {
@@ -13,7 +13,7 @@ class CountryInteractorImpl implements CountryInteractor {
   );
 
   @override
-  Future<Country> loadCountryNews(int countNews) async {
+  Future<Pokemon> loadCountryNews(int countNews) async {
     return await _apiRepository.loadCountryNews(countNews);
   }
-}*/
+}

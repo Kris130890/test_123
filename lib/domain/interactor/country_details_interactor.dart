@@ -1,5 +1,5 @@
-///import 'package:elinext_test_task/domain/model/country/country.dart';
-/*import 'package:elinext_test_task/domain/model/country/country.dart';
+import 'package:elinext_test_task/domain/model/country/country.dart';
+import 'package:elinext_test_task/domain/model/country/country.dart';
 import 'package:elinext_test_task/domain/repository/CountryDetailsRepository.dart';
 
 abstract class CountryDetailsInteractor {
@@ -31,4 +31,4 @@ class CountryDetailsInteractorImpl implements CountryDetailsInteractor {
   Future<PokemonResults> getNews(String title) async {
     return await _dbRepository.getNews(title);
   }
-}*/
+}
